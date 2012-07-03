@@ -1,0 +1,215 @@
+body{
+background-color:#D9D8D4;
+font-family: serif;
+}
+
+h1 {
+text-align:center;
+}
+
+#container {
+width:100%;
+height:100%;
+}
+
+#header {
+font-size:18px;
+background-color:#C75B12;
+background-image:url('utd-header-logo.png');
+background-repeat:no-repeat;
+background-position:10px; 
+border-style:solid;
+border-color:white;
+margin:3px auto;
+color:white;
+border-radius:10px;
+}
+
+#navigation {
+background-color:#C75B12;
+border-style:solid;
+border-color:white;
+padding:12px 5px 0px 0px;
+margin:3px auto;
+height:5%;
+position: relative;
+border-radius:10px;
+}
+
+#searchbar {
+background-color:#C75B12;
+border-style:solid;
+border-color:white;
+height:5%;
+padding:10px 10px 4px 10px;
+margin:3px auto;
+text-align:center;
+position: relative;
+border-radius:10px;
+}
+
+#categories {
+font-size:16px;
+background-color:#C75B12;
+height:65%;
+width:11%;
+margin:3px auto;
+color:white;
+border-style:solid;
+text-align:left;
+border-color:white;
+padding:5px 20px 5px 5px;
+float:left;
+position: relative;
+border-radius:10px;
+}
+
+#content {
+background-color:#EEEEEE;
+height:65%;
+width:84%;
+border-style:solid;
+border-color:white;
+margin:3px auto;
+padding:5px 5px 5px 5px;
+float:right;
+position: relative;
+border-radius:10px;
+}
+
+table { 
+background-color: #F0F0F0; 
+border-collapse: collapse; 
+border: 2px solid C75B12; 
+width:100%;
+}
+
+td { 
+padding: 5px; 
+}
+
+tr:nth-child(odd) {
+background-color: #C75B12; 
+}
+
+tr {
+background-color: #C98A5F;
+}
+
+nav { 
+font-weight: bold;
+color:white;
+text-align: center;
+}
+
+nav ul {
+display: inline;
+margin:0;
+padding:0;
+padding-top:0px;
+padding-bottom:0px;
+}
+
+nav ul li { 
+border: 2px solid white;
+font-size:16px;
+background-color:#C75B12;
+color: black; 
+margin:2px;
+padding:15px;
+padding-top:0px;
+padding-bottom:2px;
+display:inline;
+border-radius:10px;
+}
+         
+nav ul li:hover {
+background-color: #C98A5F; 
+}
+
+a { 
+font-weight: bold;
+text-decoration: none; 
+color:white;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+#searchForm{
+    width:99%;
+    position:relative;
+    display:block;
+}
+
+div.input {
+    width:10%;
+    position: relative;
+    padding:5px 5px 5px 5px;
+    border-radius:10px;
+    border:1px solid #c6d2db;
+    border-top:1px solid #b4c1cb;
+    box-shadow:inset 0 1px 2px rgba(0,0,0,0.08);
+    float:left;
+    background:#e8edf1;
+}
+
+div.input.focus {
+    padding:5px 5px 5px 5px;
+    border:1px solid #008542;
+    box-shadow:0 0 6px #abdcff, inset 0 1px 2px rgba(0,0,0,0.08);
+}
+
+input#s {
+    width:100%;
+    height:100%;
+    border:0;
+    border-radius:10px;
+    background:transparent;
+    height:16px;
+    color:#b4bdc4;
+    text-shadow:0 1px 1px #fff;
+}
+
+input#s:focus {
+    outline:none
+}
+
+input#searchSubmit {
+    width:19px;
+    height:19px;
+    text-indent:-9999px;
+    overflow:hidden;
+    background:url(search-icon.png) no-repeat;
+    border:0;
+    position:absolute;
+    top:5px; right:0px;
+    z-index:5;
+    display:none;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

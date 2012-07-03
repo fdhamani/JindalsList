@@ -1,0 +1,62 @@
+//SQL Queries
+
+//Show available items by user:
+
+SELECT user_id.user, user_name.user, user_email.user, post_datetime.postinfo, post_available.postinfo, item_id.items, item_name.items, item_description.items, item_type.items, item_price.for_sale, item_condition.for_sale, item_offer.wanted FROM user, items, post_info, for_sale, wanted 
+WHERE user_id.user = user_id.items AND
+item_id.items = item_id.post_info AND
+post_available.post_info = 1 AND 
+(item_id.items = item_id.for_sale OR
+item_id.items = item_id.wanted);
+
+//Show previous history by user:
+
+SELECT user_id.user, user_name.user, user_email.user, post_datetime.postinfo, post_available.postinfo, item_id.items, item_name.items, item_description.items, item_type.items, item_price.for_sale, item_condition.for_sale, item_offer.wanted FROM user, items, post_info, for_sale, wanted 
+WHERE user_id.user = user_id.items AND
+item_id.items = item_id.post_info AND
+post_available.post_info = 0 AND 
+(item_id.items = item_id.for_sale OR
+item_id.items = item_id.wanted);
+
+//Show available items by specific category, ex. Textbooks:
+
+SELECT user_id.user, user_name.user, user_email.user, post_datetime.postinfo, post_available.postinfo, item_id.items, item_name.items, item_description.items, item_type.items, item_price.for_sale, item_condition.for_sale, item_offer.wanted FROM user, items, post_info, for_sale, wanted 
+WHERE item_id.items = item_id.post_info AND
+post_available.post_info = 1 AND 
+item_type.items = 'textbooks' AND
+(item_id.items = item_id.for_sale OR
+item_id.items = item_id.wanted);
+
+//Show available items by keyword search:
+
+SELECT user_id.user, user_name.user, user_email.user, post_datetime.postinfo, post_available.postinfo, item_id.items, item_name.items, item_description.items, item_type.items, item_price.for_sale, item_condition.for_sale, item_offer.wanted FROM user, items, post_info, for_sale, wanted 
+WHERE item_id.items = item_id.post_info AND
+post_available.post_info = 1 AND 
+item_name.items = ('$_POST[keyword]');
+AND
+(item_id.items = item_id.for_sale OR
+item_id.items = item_id.wanted);
+
+// Create user name:
+
+INSERT INTO user (user_name, user_email, user_pw) VALUES ('$_POST[user_name]', '$_POST[user_email]', '$_POST[user_pw]');
+
+// Change PW:
+
+UPDATE user SET user_pw = '$_POST[new_password]' WHERE user_id = '$_POST[user_id]';
+
+// Add new listing
+
+INSERT INTO items (item_name, item_desc, item_type, user_id) VALUES ('$_POST[item_name]', '$_POST[item_desc]', '$_POST[item_type]', '$_POST[user_id]');
+INSERT INTO post_info (post_datetime, post_available, item_id) VALUES ('DATETIME: Auto NOW()', '1', '$_POST[item_id]');
+INSERT INTO for_sale (item_price, item_condition, item_id) VALUES ('$_POST[item_price]', '$_POST[item_condition]', '$_POST[item_ID]');
+
+// Remove listing
+
+UPDATE post_info (post_available, item_id) VALUES ('0', '$_POST[item_id]');
+
+// Add new wanted item
+
+INSERT INTO items (item_name, item_desc, item_type, user_id) VALUES ('$_POST[item_name]', '$_POST[item_desc]', '$_POST[item_type]', '$_POST[user_id]');
+INSERT INTO wanted (item_offer, item_id) VALUES ('$_POST[item_offer]', '$_POST[item_id]');
+

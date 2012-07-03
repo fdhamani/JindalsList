@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>jindalslist: UTD classifieds for textbooks, electronics, furniture, appliances, automotive parts, and more</title>
+<link rel = "stylesheet" type = "text/css" 
+href = "main.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="js/jquery.color.js"></script>
+<script src="js/script.js"></script>
+
+<!--Check to see if user entered a UTDallas Email Address-->
+<script type="text/javascript">
+function validateEmail(str){
+if(/\@utdallas.edu$/.test(str)){
+} 
+else {
+alert('Please use your UTDallas Email Address');
+}
+}
+</script>
+
+</head>
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1>
+<a href="Index.php">New User Registration
+</a>
+</h1>
+</div>
+
+<div id="navigation">
+ <nav>
+         <ul><center>  
+         <li><a href="login.php">Log In</a></li>   
+         </ul>
+         </center>
+      </nav>
+</div>
+
+<div id="searchbar">
+<!--
+OLD SEARCH METHOD
+<form method="get" action="keyword.php">
+   <input type="text" name="search" placeholder="Search by keyword" size=85>
+   <input type="submit">
+</form>
+-->
+<form id="searchForm" method="get" action="keyword.php">
+<div class="input">
+<input type="text" name="search" id="s" value="Search" autocomplete=off>
+</div>
+<input type="submit" id="searchSubmit" value=""/>
+</form>
+</div>
+
+<div id="categories">
+<b><u>Categories</u></b><br/>
+<a href="Index.php">All Items</a><br/>
+<a href="Textbooks.php">Text Books</a><br/>
+<a href="Electronics.php">Electronics</a><br/>
+<a href="Furniture.php">Furniture</a><br/>
+<a href="Appliances.php">Appliances</a><br/>
+<a href="Automotive.php">Automotive</a><br/>
+<a href="Services.php">Services</a><br/>
+<a href="Misc.php">Misc.</a><br/>
+</div>
+
+<div id="content">
+<form method="post" action="newuser.php">
+   <input type="text" name="username" placeholder="Username" size=85></br>
+   <input type="password" name="userpw" placeholder="Password" size=85></br>
+   <input type="email" name="useremail" placeholder="UTD Email Address" size=85 onchange="validateEmail(this.value);"></br>
+   <input type="submit" value="Register"> 
+</form>
+</div>
+
+
+</div>
+ 
+</body>
+</html>
+

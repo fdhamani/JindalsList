@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta charset = "utf-8">
+<title>jindalslist: UTD classifieds for textbooks, electronics, furniture, appliances, automotive parts, and more</title>
+<link rel = "stylesheet" type = "text/css" 
+href = "main.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="js/jquery.color.js"></script>
+<script src="js/script.js"></script>
+</head>
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1>
+<a href="Index.php">Post New Item
+</a>
+</h1>
+</div>
+
+<div id="navigation">
+ <nav>
+         <ul><center>
+            <li><a href="myitems.php">My Items</a></li>
+            <li><a href="logout.php">Log Out</a></li>
+         </ul>
+         </center>
+      </nav>
+</div>
+
+<div id="searchbar">
+<!--
+OLD SEARCH METHOD
+<form method="get" action="keyword.php">
+   <input type="text" name="search" placeholder="Search by keyword" size=85>
+   <input type="submit">
+</form>
+-->
+<form id="searchForm" method="get" action="keyword.php">
+<div class="input">
+<input type="text" name="search" id="s" value="Search" autocomplete=off>
+</div>
+<input type="submit" id="searchSubmit" value=""/>
+</form>
+</div>
+
+<div id="categories">
+<b><u>Categories</u></b><br/>
+<a href="Index.php">All Items</a><br/>
+<a href="Textbooks.php">Text Books</a><br/>
+<a href="Electronics.php">Electronics</a><br/>
+<a href="Furniture.php">Furniture</a><br/>
+<a href="Appliances.php">Appliances</a><br/>
+<a href="Automotive.php">Automotive</a><br/>
+<a href="Services.php">Services</a><br/>
+<a href="Misc.php">Misc.</a><br/>
+</div>
+
+<div id="content">
+<form method="get" action="newitem.php">
+   <input type="text" name="itemname" placeholder="Item Name" size=85></br>
+   <input type="text" name="itemdesc" placeholder="Item Description" size=85></br>
+   <input type="text" name="itemprice" placeholder="Price" size=85></br>
+   <select name="itemtype">
+      <option value="textbook">Text Book</option>
+      <option value="electronics">Electronics</option>
+      <option value="furniture">Furniture</option>
+      <option value="appliances">Appliances</option>
+      <option value="automotive">Automotive</option>
+      <option value="services">Services</option>
+      <option value="misc">Misc</option>
+   <input type="submit">
+   </select>
+</form>
+</div>
+
+
+</div>
+ 
+</body>
+</html>
+
